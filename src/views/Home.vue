@@ -4,7 +4,7 @@
     <h3 class="h-40 text-back">{{ joke }}</h3>
     <button
       class="bg-blue-500 hover:bg-blue700 text-white font-bold py-2 px-4 rounded-full mt-10 focus:outline-none"
-      @click="clicked"
+      @click="addJoke"
     >
       AddJoke
     </button>
@@ -12,23 +12,24 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: "Home",
   methods: {
-    clicked() {
-      alert("Just clicked and waiting for the jokes");
+    ...mapActions(["setCurrentJoke"]),
+    addJoke() {
+      this.setCurrentJoke();
     },
   },
-  data: () => ({}),
   computed: {
-    joke() {
-      return this.$store.getters.getCurrentJoke;
+    ...mapGetters({ joke: "getCurrentJoke" }),
+    /*joke() {
+      return this.getCurrentJoke;
     },
   },
-  /*
-  mounted() {
-    this.joke = this.$store.getters.getCurrentJoke;
-  },*/
+};*/
+  },
 };
 </script>
 

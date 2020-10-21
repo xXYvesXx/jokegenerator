@@ -30,5 +30,6 @@ export default new Vuex.Store({
   modules: {},
   getters: {
     getCurrentJoke: (state) => state.currentJoke,
+    getAllJokes: (state) => state.allJokes,
   },
 })
