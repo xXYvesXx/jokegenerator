@@ -9,11 +9,15 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   computed: {
+    ...mapGetters({ jokes: "getAllJokes" }),
+    /*
     jokes() {
       return this.$store.getters.getAllJokes;
-    },
+    },*/
   },
 };
 </script>

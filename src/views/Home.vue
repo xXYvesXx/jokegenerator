@@ -18,9 +18,10 @@ export default {
   name: "Home",
   methods: {
     ...mapActions({ addJoke: "setCurrentJoke" }),
+    /*
     addJoke() {
       this.setCurrentJoke();
-    },
+    },*/
   },
   computed: {
     ...mapGetters({ joke: "getCurrentJoke" }),
